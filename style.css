@@ -4,3 +4,18 @@ h1{
 #p1{
     font-size: 20px; font-style: italic;
 }
+#head1{
+    font-size: 50px; font-weight: bold; text-align: center;
+}
+#mainhead{
+    font-size: 60px; text-align: center;
+}
+#head2{
+    font-size: 50px; text-align: center;
+}   
+    .wings{
+            width: 150px; height: auto;
+    }
+    .bluesky{
+        width: 150px; height: auto; text-align: center; margin-right: 20px;
+    }
