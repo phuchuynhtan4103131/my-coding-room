@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
         integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
         crossorigin="anonymous" referrerpolicy="no-referrer">
-    <a href="WebBootcamp.html"><img src="logo.png" alt="chicken man logo" style="width:150px;height: auto;"></a>
+    <a href="profile.html"><img src="download (5).jpg" alt="RMIT" style="width:150px;height: auto;"></a>
     <h1 id="mainhead">Welcome to my Photograph Collection !</h1>
     <h2 id="head2">Hope you enjoy📸</h2>
     <style type="text/css">
@@ -24,10 +24,11 @@
             display: flex;
             flex-direction: row;
             justify-content: center;
+            padding: 30px;
         }
         .flex-box{
-            width: 200px;
-            height: 200px;
+            width: 500px;
+            height: auto;
             background:linear-gradient(green,white);
             text-align: center;
             border-radius: 20px;
@@ -36,20 +37,101 @@
 
         }
         body {
-            background-color: #2B2B2B; /* dark background */
-            color: #A3C940; /* meth green text */
-            font-family: Arial, sans-serif;
+            background-color: white; /* dark background */
+            color: navy; /* meth green text */
+            font-family:'Times New Roman', Times, serif, sans-serif;
             margin: 0;
             padding: 20px;
+
         }
         title{
             background-color: #5C5C5C;
             padding: 20px;
             text-align: center;
         }
+        img{
+            width: 480px;
+            height: auto;
+            transition: transform 0.5s ease-in-out;
+            object-fit: cover;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            align-items: center;
+            justify-content: center;
+            border-color:darkorchid;
+            
+        }   
+        .image-container{
+            position: relative;
+            width: 480px;
+            height: auto;
+            overflow:hidden;
+            transition: transform 0.3s ease;
+            padding: 20px;
+            
+        }
+        .image-container:hover img {
+            transform: scale(1.05) translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+        }
     </style>
 </head>
 <body>
-    <h1>This is my everyday commute bike</h1>
-    <img src="_MG_5271.jpg" alt="front" style="width: 500px; height: auto;">
+    <div class="flex-container">
+                <div class="image-container">
+                    <img src="_MG_5271.jpg" alt="front">
+                </div> 
+                <div class="image-container">
+                 <img src="_MG_5272.jpg" alt="cropped" >
+                </div>
+                <div class="image-container">
+                    <img src="_MG_5262.jpg" alt="close">
+                </div>
+    </div>
+    <h1 id="head1">More Photos !</h1>
+    <div class="flex-container">
+                <div class="image-container">
+                    <img src="cuptruyenhinh.jpg" alt="front">
+                </div> 
+                <div class="image-container">
+                 <img src="cuptruyenhinh1.jpg" alt="cropped" >
+                </div>
+                <div class="image-container">
+                    <img src="cuptruyenhinh2.jpg" alt="close">
+                </div>
+                <div class="image-container">
+                    <img src="disableguy.jpg" alt="close">
+                </div>
+                <div class="image-container">
+                    <img src="bikes.jpg" alt="close">
+                </div>
+    </div>
+    <div class="flex-container">
+                <div class="image-container">
+                    <img src="bam.jpg" alt="front">
+                </div> 
+                <div class="image-container">
+                 <img src="bam1.jpg" alt="cropped" >
+                </div>
+                <div class="image-container">
+                    <img src="bam2.jpg" alt="close">
+                </div>
+    </div>
+    <div class="flex-container">
+        <div class="image-container">
+                    <img src="bam3.jpg" alt="close">
+                </div>
+                <div class="image-container">
+                    <img src="bam4.jpg" alt="close">
+                </div>
+                <div class="image-container">
+                    <img src="bam5.jpg" alt="close">
+                </div>
+    </div>
+    <footer>
+        <hr style="font-weight: bold;">
+        <h4>Keep In Touch With Me ^^ <br>
+            <a href="https://www.instagram.com/phuc_huynh_tan/?hl=vi"><i class="fa-brands fa-instagram" style="font-size: 50px;color: black;"></i></a>
+            <a href="https://www.facebook.com/tanphuc.huynh.33449/"><i class="fa-brands fa-facebook" style="font-size: 50px;color: black;"></i></a>
+        </h4>   
+    </footer>
 </body>
