@@ -38,3 +38,20 @@ header {
     padding: 20px;
     text-align: center;
 }
+.navbar{
+    font-size: 20px; font-weight: bold;
+}
+.form-fieldset{ 
+    width:300px;
+    margin: 0 auto;
+    padding: 20px;
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;  
+}
+label, input{
+    margin: 10px 0;
+    width: 100%;
+    text-align: center;
+}
