@@ -25,3 +25,16 @@ h1{
 .fa-brandsfa-threads{
     color: black;
 }
+
+body {
+    background-color: white; /* dark background */
+    color:black; /* meth green text */
+    font-family: monospace;
+    margin: 0;
+    padding: 20px;
+}
+header {
+    background-color: #5C5C5C;
+    padding: 20px;
+    text-align: center;
+}
