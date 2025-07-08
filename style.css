@@ -38,3 +38,58 @@ header {
     padding: 20px;
     text-align: center;
 }
+   *{
+            margin: 0;
+            padding: 0;
+            font-family: monospace;
+            box-sizing: border-box;
+        }
+        .flex-container{
+            width: 100%;
+            height: auto;
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            padding:20px;
+            flex-wrap:wrap;
+        }
+        .flex-box{
+            width: 200px;
+            height: 200px;
+            background:linear-gradient(green,white);
+            text-align: center;
+            border-radius: 20px;
+        }
+        body {
+            background-color: #2B2B2B; /* dark background */
+            color: #A3C940; /* meth green text */
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+        }
+        title{
+            background-color: #5C5C5C;
+            padding: 20px;
+            text-align: center;
+        }
+        img{
+            transition: transform 0.5s ease-in-out;
+            object-fit: cover;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            border-color:darkorchid;
+            
+        }   
+        .image-container{
+            margin:5px;
+            padding:0;
+            position: relative;
+            width: 480px;
+            height: auto;
+            overflow:hidden;
+            transition: transform 0.3s ease;
+
+        }
+        .image-container:hover img {
+            transform: scale(1.05) translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+        }

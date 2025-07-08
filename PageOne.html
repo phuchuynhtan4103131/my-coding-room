@@ -10,11 +10,11 @@
         crossorigin="anonymous" referrerpolicy="no-referrer">
     <a href="profile.html"><img src="logo.png" alt="chicken man logo" style="width:150px;height: auto;"></a>
     <h1 id="mainhead">Welcome to the supply page !</h1>
-    <style type="text/css">
+    <style type="text/css" rel="stylesheet" href="style.css">
         *{
             margin: 0;
             padding: 0;
-            font-family: cursive;
+            font-family: monospace;
             box-sizing: border-box;
         }
         .flex-container{
@@ -46,88 +46,95 @@
             padding: 20px;
             text-align: center;
         }
+        img{
+            transition: transform 0.5s ease-in-out;
+            object-fit: cover;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            align-items: center;
+            justify-content: center;
+            border-color:darkorchid;
+            
+        }   
+        .image-container{
+            position: relative;
+            width: 480px;
+            height: auto;
+            overflow:hidden;
+            transition: transform 0.3s ease;
+            padding: 20px;
+            
+        }
+        .image-container:hover img {
+            transform: scale(1.05) translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+        }
     </style>
 </head>
 <body>
     <hr style="font-weight: bold;">
     <h2 id="head2">Top supplies:</h2>
-    <div class="flex-container">
-        <div class="flex-box">
-                <h3>Raw Chickens (Wings)</h3>
-                <a href="https://winmart.vn/products/meatdeli-canh-ga--s10283202?storeCode=1535&storeGroupCode=1998"><img src="wings.jpg" style="width: 150px; height: auto; margin: auto;"></a>
-        </div>
-        <div class="flex-box"> 
+        <div class="flex-container">
+            <div class="flex-box">
+                    <h3>Raw Chickens (Wings)</h3>
+                    <h3>$4.50-$8/lbs</h3>
+                    <a href="https://winmart.vn/products/meatdeli-canh-ga--s10283202?storeCode=1535&storeGroupCode=1998"><img src="wings.jpg" style="width: 150px; height: auto; margin: auto;"></a>
+            </div>
+            <div class="flex-box"> 
                 <h3>Methamphetamine (Blue Sky) 🔵</h3>
+                <h3>$40.000/pound</h3>
                 <a href="https://breakingbad.fandom.com/wiki/Blue_Sky"><img src="bluesky.jpg" alt="bluesky" style="width: 150px; height: auto; margin: auto;"></a>
             
-        </div>
-        <div class="flex-box"> 
-                <h3>Raw Chicken (Drumsticks)</h3>
-                <a href="https://winmart.vn/products/meat-dui-toi-ga--s10283199?storeCode=1535&storeGroupCode=1998"><img src="drumpsticks.jpg" alt="drumpsticks" style="width: 150px; height: auto; margin: auto;"></a>
-        </div>
-        <div class="flex-box">
-            <h3>Money Laundering 💵</h3>
-            <a href="Page404.html"><img src="money.jpg" alt="money" style="height:150px;width: auto;"></a>
-        </div>
-    </div>
-    <h1 id="head1">Hirable Hitman and Services</h1>
-    <h2 id="head2"></h2>
-    <div class="flex-container">
+            </div>
             <div class="flex-box"> 
-                <h3>Photography</h3>
-                    <a href="Photography.html"><h4 style="color:darkcyan">code name: Canon 60D</a>
-                <img src="canon.jpg" alt="canon" style="width: autopx; height: 140px; margin: auto;">
-            </a>
+                    <h3>Raw Chicken (Drumsticks)</h3>
+                    <h3>$4-$7/lbs</h3>
+                    <a href="https://winmart.vn/products/meat-dui-toi-ga--s10283199?storeCode=1535&storeGroupCode=1998"><img src="drumpsticks.jpg" alt="drumpsticks" style="width: 150px; height: auto; margin: auto;"></a>
+            </div>
+            <div class="flex-box">
+                <h3>Money Laundering 💵</h3>
+                <a href="Page404.html"><img src="money.jpg" alt="money" style="height:150px;width: auto;"></a>
+            </div>
         </div>
-            <div class="flex-box"> 
-                <h3>Bike Life</h3>
-                    <a href="https://www.instagram.com/richard_n_winnerx/?hl=vi"><h4 style="color: red;">code name: Winner X</h4></a>
-                <img src="winner x.jpg" alt="richardhuynh" style="width: autopx; height: 150px; margin: auto;">
-            </a>
+        <h2 id="head2">Other Commercial Services</h2>
+        <div class="flex-container">
+                <div class="flex-box">
+                    <h3>Commercial Laundry Services</h3>
+                    <a href="https://www.lg.com/global/business/commercial-laundry"><img src="logo.png" style="width: 200px;height:auto"></a>
+                </div>
+                <div class="flex-box">
+                    <h3>Methamphetamine Production</h3>
+                    <a href="Page404.html"><img src="white.jpeg" style="width: auto;height:150px"></a>
+                </div>
         </div>
-        <div class="flex-box"> 
-                <h3>Opps Quách</h3>
-                    <a href="https://www.instagram.com/_hp_shawn/?hl=vi"><h4 style="color:red">code name:đodayngu</h4></a>
-                <img src="opps.jpg" alt="phat" style="width: autopx; height: 150px; margin: auto;">
-            </a>
-        </div>
-        <div class="flex-box"> 
-                <h3>Travis Trịnh</h3>
-                    <a href="https://www.instagram.com/user.anbg/?hl=vi"><h4 style="color:red">code name:abangdamdang</h4></a>
-                <img src="abang.jpg" alt="bang" style="width: 150px; height: auto; margin-right: 15px;">    
-            </a>
-        </div>
-        
-    </div>
     <h2 id="head2">Reliable Wingmen:Takes their own lifes</h2>
     <div class="flex-container">
         <div class="flex-box">
-            <h3>Saul Good Man</h3>
-                <a href="https://www.instagram.com/therealbobodenkirk/?hl=vi"><h4 style="color:white">code name:bettercallsaul</h4></a>
-                <img src="saulgoodman.jpg" alt="saul" style="width: auto; height: 150px;">
+                <h3>Saul Good Man</h3>
+                <h4 style="color:white">code name:bettercallsaul</h4>
+                <a href="https://www.instagram.com/therealbobodenkirk/?hl=vi"><img src="saulgoodman.jpg" alt="saul" style="width: auto; height: 150px;"></a>
         </div>
         <div class="flex-box">
             <h3>Mike Erhmantraut</h3>
-            <a href="https://www.imdb.com/name/nm0052186/"><h4 style="color: white;">code name:Mikey</h4></a>
-            <img src="mike.jpg" alt="mike" style="width: auto; height: 150px;">
+            <h4 style="color: white;">code name:Mikey</h4>
+            <a href="https://www.imdb.com/name/nm0052186/"><img src="mike.jpg" alt="mike" style="width: auto; height: 150px;"></a>
         </div>
         <div class="flex-box">
             <h3>Flynn White</h3>
-            <a href="https://breakingbad.fandom.com/wiki/Walter_White_Jr."><h4 style="color:white">code name:walkingbad</h4></a>
-            <img src="Walter_White_Jr_S5B.png" alt="Flynn" style="width: auto; height: 150px;">
+            <h4 style="color:white">code name:walkingbad</h4>
+            <a href="https://breakingbad.fandom.com/wiki/Walter_White_Jr."><img src="Walter_White_Jr_S5B.png" alt="Flynn" style="width: auto; height: 150px;"></a>
         </div>
     </div>
     <h2 id="head2">The Salamancas: Takes your lifes</h2>
     <div class="flex-container">
         <div class="flex-box">
             <h3>Lalo Salamancas</h3>
-            <a href="https://breakingbad.fandom.com/wiki/Lalo_Salamanca"><h4 style="color:yellow">code name:thecousin</h4></a>
-            <img src="lalo.jpg" alt="lalo" style="width: auto; height: 150px;">
+            <h4 style="color:yellow">code name:thecousin</h4>
+            <a href="https://breakingbad.fandom.com/wiki/Lalo_Salamanca"><img src="lalo.jpg" alt="lalo" style="width: auto; height: 150px;"></a>
         </div>
         <div class="flex-box">
             <h3>The Twin</h3>
-            <a href="https://breakingbad.fandom.com/wiki/The_Cousins"><h4 style="color:yellow">code name:thetwins</h4></a>
-            <img src="twins.jpg" alt="twins" style="width: auto;height: 150px;">
+            <h4 style="color:yellow">code name:thetwins</h4></a>
+            <a href="https://breakingbad.fandom.com/wiki/The_Cousins"><img src="twins.jpg" alt="twins" style="width: auto;height: 150px;"></a>
         </div>
     </div>
     <footer>
