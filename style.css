@@ -55,3 +55,6 @@ label, input{
     width: 100%;
     text-align: center;
 }
+#pfp{
+    border-radius: 50%;
+}
