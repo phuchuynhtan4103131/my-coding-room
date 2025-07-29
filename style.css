@@ -58,3 +58,46 @@ label, input{
 #pfp{
     border-radius: 50%;
 }
+.container {
+  display:grid;
+  grid-template-columns: 100fr 100fr 100fr;
+  grid-template-rows:  100fr 100fr 100fr 100fr;
+  grid-template-areas:"side header header" 
+                      "side body body " 
+                      "side card1 card2 "
+                      "side footer footer";
+  gap:10px;
+  margin:6px;
+  padding: 10px;
+}
+.body{
+    background-color: red;
+    grid-area:body;
+    border-radius:15px;
+}
+.footer{
+    background-color:rgb(160, 0, 192);
+    grid-area: footer;
+    border-radius:15px;
+}
+.side{
+    background-color: pink;
+    grid-area:side;
+    border-radius:15px;
+    text-align: center;
+}
+.header{
+    background-color: blue;
+    grid-area:header;
+    border-radius:15px;
+}
+.card1{
+    background-color: darkgreen;
+    grid-area:card1;
+    border-radius:15px;
+}
+.card2 {
+    background-color: aqua;
+    grid-area: card2;
+    border-radius:15px;
+}
