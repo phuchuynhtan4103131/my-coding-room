@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <a href="profile.html"><img src="download (5).jpg" style="width: 150px;height: auto;"></a><br>
+    <a href="profile.html"><img src="pic/download (5).jpg" style="width: 150px;height: auto;"></a><br>
     <a href="shopping.html"><i class="fa-solid fa-cart-shopping" style="color: black;font-size: 30px;margin-right: auto;"></i></a>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Shopping Cart</title>
@@ -13,77 +13,75 @@
         crossorigin="anonymous" referrerpolicy="no-referrer">
 </head>
 <body>
-    <h1 id="head1">Fill up your information! <img src="los.jpeg" style="width: 100px; height: auto;"></h1>
-    <fieldset class="form-fieldset">
-        <legend style="text-align: center;">Basic Info:</legend>
-        <label for="fname" id="label" style="text-align: center;">Full Name:</label>
-        <input id="fname" name="fname" type="text" id="input;" maxlength="20" required>
+    <form action="/submit" method="POST">
+        <h1 id="head1">Fill up your information! <img src="pic/los.jpeg" style="width: 100px; height: auto;"></h1>
+        <fieldset class="form-fieldset">
+            <legend style="text-align: center;">Basic Info:</legend>
+            <label for="fname" id="label" style="text-align: center;">Full Name:</label>
+            <input id="fname" name="fname" type="text" id="input;" maxlength="20" required placeholder="Ex: Nguyen Van A">
 
-        <label for="pnumber" id="label" style="text-align: center;">Phone Number:</label>
-        <input id="pnumber" name="fname" type="pin" id="input;" maxlength="20" required>
+            <label for="pnumber" id="label" style="text-align: center;">Phone Number:</label>
+            <input id="pnumber" name="fname" type="pin" id="input;" maxlength="20" required placeholder="Ex:012345">
 
-        <label for="email" id="label" style="text-align: center;">Email:</label>
-        <input id="email" name="email" type="email" id="input;" maxlength="20" required>
-
+            <label for="email" id="label" style="text-align: center;">Email:</label>
+            <input id="email" name="email" type="email" id="input;" maxlength="20" required placeholder="Ex:NguyenVanA@gmail.com">
+        </fieldset>
         
+        <fieldset class="form-fieldset">
+            <legend style="text-align: center;">Shipping Info:</legend>
+            <label for="addr" id="label" style="text-align: center;">Address:</label>
+            <input id="addr" name="addr" type="text" id="input;" maxlength="20" required placeholder="Ex:5 To Hien Thanh street, District....">
 
-        
-    </fieldset>
-    
-    <fieldset class="form-fieldset">
-        <legend style="text-align: center;">Shipping Info:</legend>
-        <label for="addr" id="label" style="text-align: center;">Address:</label>
-        <input id="addr" name="addr" type="text" id="input;" maxlength="20" required>
+            <label for="bday" id="label" style="text-align: center;">Day of Delivery:</label>
+            <input id="bday" name="bday" type="date" id="input;" maxlength="20" required>
 
-        <label for="bday" id="label" style="text-align: center;">Day of Delivery:</label>
-        <input id="bday" name="bday" type="date" id="input;" maxlength="20" required>
+            <p>District:
+                <select>
+                    <option value="1">District 1</option>
+                    <option value="2">District 2</option>
+                    <option value="3">District 3</option>
+                    <option value="4">District 4</option>
+                    <option value="5">District 5</option>
+                    <option value="6">District 6</option>
+                    <option value="7">District 7</option>
+                    <option value="8">District 8</option>
+                    <option value="9">District 9</option>  
+                    <option value="10">District 10</option>
+                    <option value="11">District 11</option>
+                    <option value="12">District 12</option>
+                    <option value="BT">Binh Thanh District</option>
+                    <option value="BTAN">Binh Tan District</option>
+                    <option value="TP">Tan Phu District</option>
+                    <option value="TB">Tan Binh District</option>
+                </select>
+            </p>
+            <p>City:
+                <select>
+                    <option value="1">Ho Chi Minh</option>
+                    <option value="2">Da Nang</option>
+                    <option value="3">Ha Noi</option>
+                    <option value="4">Vung Tau</option>
+                    <option value="5">Thanh Hoa</option>
+                </select>
+            </p>
 
-        <p>District:
-            <select>
-                <option value="1">District 1</option>
-                <option value="2">District 2</option>
-                <option value="3">District 3</option>
-                <option value="4">District 4</option>
-                <option value="5">District 5</option>
-                <option value="6">District 6</option>
-                <option value="7">District 7</option>
-                <option value="8">District 8</option>
-                <option value="9">District 9</option>  
-                <option value="10">District 10</option>
-                <option value="11">District 11</option>
-                <option value="12">District 12</option>
-                <option value="BT">Binh Thanh District</option>
-                <option value="BTAN">Binh Tan District</option>
-                <option value="TP">Tan Phu District</option>
-                <option value="TB">Tan Binh District</option>
-            </select>
-        </p>
-        <p>City:
-            <select>
-                <option value="1">Ho Chi Minh</option>
-                <option value="2">Da Nang</option>
-                <option value="3">Ha Noi</option>
-                <option value="4">Vung Tau</option>
-                <option value="5">Thanh Hoa</option>
-            </select>
-        </p>
-
-        <p>Carts:
-            <select>
-                <option value="1">Mike Erhmantraut</option>
-                <option value="2">Flynn</option>
-                <option value="3">Saul Goodman</option>
-                <option value="4">Lalo Salamancas</option>
-                <option value="5">The Twins</option>
-                <option value="6">Tucos Salamancas</option>
-                <option value="7">John Wick</option>
-                <option value="8">Doom Guy</option>
-                <option value="9">Gta 5 Online Character</option>
-                <option value="10">Agent 47s</option>
-            </select>
-        </p>
-    <p style="width: 150px;height: auto;">
-        <input type="submit" value="Order">
-    </p>
+            <p>Carts:
+                <select>
+                    <option value="1">Mike Erhmantraut</option>
+                    <option value="2">Flynn</option>
+                    <option value="3">Saul Goodman</option>
+                    <option value="4">Lalo Salamancas</option>
+                    <option value="5">The Twins</option>
+                    <option value="6">Tucos Salamancas</option>
+                    <option value="7">John Wick</option>
+                    <option value="8">Doom Guy</option>
+                    <option value="9">Gta 5 Online Character</option>
+                    <option value="10">Agent 47s</option>
+                </select>
+            </p>
+            <p style="width: 150px;height: auto;">
+                <input type="submit" value="Order">
+            </p>
+    </form>
 </body>
 </html>
