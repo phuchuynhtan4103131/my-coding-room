@@ -82,7 +82,7 @@ label, input{
     text-align: center;
 }
 .myteam{
-   
+    display:grid;
     border-radius: 8px;
     border:white 1px solid;
     box-shadow: 0 8px 32px rgba(0, 0, 0, 0.12);
@@ -167,6 +167,25 @@ label, input{
     border:white 1px solid;
     box-shadow: 0 8px 32px rgba(0, 0, 0, 0.12);
 }
+
+hr{
+    border: none;
+    height: 2px;
+    background: linear-gradient(90deg, transparent, #333, transparent);
+    margin: 2rem 0;
+    width: 100%;
+    max-width: 800px; /* Prevents it from being too wide on large screens */
+    margin: 2rem auto;
+}
+@media screen and (max-width:768px){
+    .img{
+        display: grid;
+        grid-template-columns: 2fr 2fr;
+        height: 150px;
+        width:80%;
+    }
+}
+
 .container > div{
     text-align: center;
     background-color: red;
@@ -214,6 +233,7 @@ label, input{
 .wholebody:hover{
     transform:scale(1.2,1.2);
 }
+
 /*grid-area: row-start col-start row-end col-end*/
 .item-1{
     font-size: 30px;
