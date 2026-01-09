@@ -1,0 +1,39 @@
+#header-container{
+    padding: 8px;
+    gap:5px;
+    font-weight:bold;
+    text-decoration: none;
+}
+
+#profile{
+    background-color: darkblue;
+    flex: 0 0 280px;
+    max-width: 280px;
+    min-height: 100vh;
+    border-radius: 8px;
+    font-size:15px;
+    color:white
+
+}
+#reading-list{
+    color:black;
+    flex:1;
+    max-width:calc(100% - 280px);
+}
+#reading-plan{
+    width:100%;
+    padding:2rem;
+    display:grid;
+    grid-template-columns: repeat(2,1fr);
+    gap:24px;
+    max-width: 1000px;
+    margin:0 auto;
+}
+
+
+#refresh-btn{
+    background-color: blue;
+    color: white;
+    border-radius: 8px;
+    border: white solid 1px;
+}
