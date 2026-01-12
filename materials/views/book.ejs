@@ -7,43 +7,69 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <!-- Replace <Your Full Name> with your name here  -->
-    <title>Your Full Name's Weekly Readings</title>
+    <title>Phuc Huynh Tan's Weekly Readings</title>
     
     <!-- Include your favicon here -->
-
+    <link rel="stylesheet" href="/style/book.css">
     <!-- Including Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
       
 </head>
 <!-- Header-->
-<header>
-    <img src="/images/logo.jpg" alt="logo" width="64" height="64">
-    <nav>
-        <a href="/">Home Page</a>
-    </nav>
+<header class="header" id="header-container">
+    <img src="/images/cat-pondering-cat.png" alt="logo" width="64" height="64">
+    <a href="/">Home Page</a>
 </header>
+
 
 <!-- Main content-->
 <main>
-    <div>
-        <!-- Book details-->
+    <nav></nav>
+    <div class="book-details">
+            <div class="card" style="background-image: url('<%= book.image%>');">
+                <div class="overlay">
+                     <% if(book){%>
+                    <!-- <img src="<%=book.imageUrl || book.image%>" alt="<%book.title%>"> -->
+                    <h3><%= book.title%></h3>
+                    <span><%=book.author%></span>
+                    <p><%= book.description%></p>
+                    <span><%=book.category%> | <%=book.year%></span>
+                <% }else{%>
+                    <p>No book is loaded !</p>
+                <%}%>
+                </div>
+            </div>
+            
     </div>
 
     <!-- Related books in the same category -->
-    <section>
+    <section class="related-section">
         <p>Related Books</p>
-       
+        <% if(related && related.length){%>
+            <%related.forEach((item)=>{ %>
+                <div class="card" style="background-image: url('<%=item.image%>');">
+                     <a href="/book/<%=encodeURIComponent(item.title)%>">
+                        <div><%=item.title%></div>
+                    </a>
+                </div>
+               
+            <%})%>
+            
+        <%}else{%>
+            <p>No related books found.</p>
+        <%}%>
+        
     </section>
 
     <!-- Back button here -->
     
-      <button id="btn-back">Back</button>
-    
+       <a href="<%= backUrl %>" id="back-btn">Back</a>
+
   </main>
     
  <!-- Footer -->
-        <footer>
-            Made by <b>Your full name</b>
+        <footer class="footer-container">
+            Made by <b> Phuc Huynh Tan</b>
         </footer>
     </div>
 

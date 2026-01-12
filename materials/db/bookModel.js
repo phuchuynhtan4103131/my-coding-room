@@ -1,7 +1,7 @@
 /**
  * Define bookSchema and bookModel
  */
-const mongoose = require('./mongoose')
+import mongoose from './mongoose.js';
 
 
 //  Define the Book schema
@@ -29,4 +29,4 @@ const readingListSchema = new mongoose.Schema({
 // Create readingList model
  const ReadingList = mongoose.model('ReadingList', readingListSchema);
 
- module.exports = {Book, ReadingList};
+export { Book, ReadingList };

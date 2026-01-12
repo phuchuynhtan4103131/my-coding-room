@@ -1,0 +1,92 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+
+
+.space-mono-bold {
+  font-family: "Space Mono", monospace;
+  font-weight: 700;
+  font-style: normal;
+}
+
+
+
+.book-details img{
+    width: 500px;
+    height: 200px;
+    border-radius: 8px;
+    padding: 8px;
+}
+
+.card{
+    position: relative;
+    width: 100%;
+    border-radius: 10px;
+    overflow: hidden;
+    background-size: cover;
+    background-position: center;
+    box-shadow: 0 8px 18px rgba(0, 0, 0, 0.2);
+}
+
+.card::after{
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(0deg, rgba(0, 0, 0, 0.55), rgba(0, 0, 0, 0.05) 60%);
+    pointer-events: none;
+}
+
+.card a,
+.card .overlay{
+    position: relative;
+    z-index: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    padding: 14px;
+    color: #fff;
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.card .overlay{
+    justify-content: flex-start;
+}
+
+.related-section{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 16px;
+    padding: 8px;
+}
+
+.related-section > p{
+    grid-column: 1 / -1;
+    margin: 0;
+    font-weight: bold;
+    font-size: 20px;
+}
+
+.related-section .card{
+    height: 160px;
+}
+
+.book-details .card{
+    min-height: 320px;
+}
+
+#back-btn{
+    width:100px;
+    height: 50px;
+    margin: 0 auto;
+  display: block;
+  background-color: blue;
+  border-radius: 8px;
+  color:white;
+  text-align: center;
+  padding-top: 5px;
+
+}
+
+.footer-container{
+    display: flex;
+    justify-content: center;
+}

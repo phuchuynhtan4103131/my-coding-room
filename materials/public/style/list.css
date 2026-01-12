@@ -1,3 +1,12 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+
+
+.space-mono-bold {
+  font-family: "Space Mono", monospace;
+  font-weight: 700;
+  font-style: normal;
+}
+
 #header-container{
     padding: 8px;
     gap:5px;
@@ -19,6 +28,7 @@
     color:black;
     flex:1;
     max-width:calc(100% - 280px);
+    padding:8px;
 }
 #reading-plan{
     width:100%;
@@ -37,3 +47,97 @@
     border-radius: 8px;
     border: white solid 1px;
 }
+.book-content{
+    border-radius: 8px;
+    border:black 1px solid;
+    padding:8px;
+    margin:5px;
+
+    
+}
+.book-content > a {
+    display:flex;
+    /* flex-direction: column-reverse;  */
+    flex-direction: row-reverse;
+    justify-content: space-between;
+    text-decoration: none;
+    padding:5px;
+    gap:5px;
+}
+
+.book-content > h3 {
+    color:black;
+    font-weight: bold;
+    ;
+}
+.personal-info{
+    font-size:15px;
+}
+#pfp{
+    padding:8px;
+    border-radius:50%;
+}
+.book-description{
+    display:flex;
+
+
+}
+
+.footer-container{
+    display: flex;
+    justify-content: center;
+}
+@media (max-width:992px){
+    #reading-list{
+        flex-direction: column;
+    }
+    #profile{
+        width: 100%;
+        max-width: 100%;
+        min-height: 360px;
+        height: auto;
+        padding: 24px 16px;
+        text-align: center;
+        border: 18px;
+    }
+    #pfp{
+        height: 160px;
+    }
+    .book-content{
+        display: flex;
+        flex-direction: column;
+        max-width: 100%;
+        
+    }
+    .row{
+        flex-direction: column;
+        align-items: stretch;
+        gap: 16px;
+    }
+    .book-content a{
+        display: flex;
+        flex-direction: column-reverse;
+    }
+    .reading-books{
+        max-width: 100%;
+        width: 100%;
+        padding: 0 4px;
+    }
+    #reading-list{
+        max-width: 100%;
+        width:100%;
+        padding: 0 4px;
+    }
+    #reading-plan{
+        display: block;
+        padding:12px 0 20px;
+        text-align:center
+    }
+    #pfp{
+        height:180px;
+        width: 180px;
+        object-fit: cover;
+        margin:0 auto 12px;
+    }
+}
+

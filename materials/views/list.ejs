@@ -28,29 +28,79 @@
 <main>
     
     <!-- Your profile-->
-     <div class="container-fluid">
+     <div class="container-fluid reading-books">
         <div class="row">
                 <aside id="profile">
-                <div>
-                    <img src="images/profile.png" alt="" height="250" >
-                </div>
-                <div>
-                    <div class="mb-4">
-                        <span>Hi, I'm</span>
-                        <h1>John Doe</h1>
+                    <div>
+                        <img src="/images/black-black-man.gif" alt="" height="250" id="pfp">
                     </div>
                     <div>
-                        <h2>s1234565</h2>
-                        <h2>joe.mama@rmit.edu.vn</h2>
+                        <div class="mb-4">
+                            <span>Hi, I'm</span>
+                            <h1>John Doe</h1>
+                        </div>
+                        <div class="personal-info">
+                            <h5>s1234565</h5>
+                            <h5>joe.mama@rmit.edu.vn</h5>
+                        </div>
                     </div>
-                </div>
             </aside>
             <section id="reading-list">
                     <h2 class="text-end p-3">Recommended <b>READING LIST</b></h2>
                     <div id="reading-plan" class="d-flex justify-content-end">
-                        <button type="refresh" id="refresh-btn" onclick="location.reload()">Refresh</button>
+                        <form action="/" method="POST">
+                            <input type="hidden" name="currentListId" value="<%= list ? list._id : '' %>">
+                                <button type="refresh" id="refresh-btn" onclick="location.reload()">Refresh</button>
+                        </form>
+                        
                     </div>
-                    
+                    <% console.log("list.ejs: list loaded from MongoDB?", !!(list && list.books && list.books.length)); %>
+                    <% if(list && list.books && list.books.length){%>
+                        <% 
+                            const categoryOrder = ["TEXTBOOK", "PHILOSOPHY", "NOVEL"];
+                            const dayMap = {
+                                TEXTBOOK: "Monday - Wednesday",
+                                PHILOSOPHY: "Thursday - Friday",
+                                NOVEL: "Saturday - Sunday"  
+                            };
+                            const picks = categoryOrder.map((category) => {
+                                return list.books.find((book) => {
+                                    return (book.category || "").toUpperCase() === category;
+                                });
+                            });
+                        %>
+                        <% picks.forEach((book, index) => { %>
+                            <span><%= (book.category || "").toUpperCase() %></span>
+                            <span><%= dayMap[categoryOrder[index]] %></span>
+                            <div class="book-content">
+
+                                    <% if(book){ %>
+                                    <% console.log("list.ejs: image src", book.imageUrl || book.image); %>
+                           
+                                
+                                  
+                                            <a href="/book/<%= encodeURIComponent(book.title)%>">
+                                                <img src="<%= book.imageUrl || book.image %>" height="300"  alt="<%= book.title %>" style="border-radius: 8px;">
+                                                <section>
+                                                    <h3><%= book.title %></h3>
+                                                    <span><%= book.author %></span>
+                                                    <p><%= book.description%></p>
+                                                </section>
+                                            </a>
+                                    
+                                    
+                                <% } else { %>
+                                    <section>
+                                        <h3><%= categoryOrder[index] %></h3>
+                                        <span>No book found for this category.</span>
+                                        <span><%= dayMap[categoryOrder[index]] %></span>
+                                    </section>
+                                <% } %>
+                            </div>
+                        <% }) %>
+                    <% } else { %>
+                        <p>No books are found!</p>
+                    <% } %>
             </section> 
         </div>
             
@@ -58,8 +108,8 @@
 </main>
     
  <!-- Footer -->
-        <footer>
-            Made by <b>Phuc Huynh Tan</b>
+        <footer class="footer-container">
+            Made by <b> Phuc Huynh Tan </b>
         </footer>
     </div>
 
