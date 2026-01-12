@@ -90,3 +90,14 @@
     display: flex;
     justify-content: center;
 }
+.breadcrumbs a + a::before,
+.breadcrumbs span::before {
+  content: "----›";
+  margin: 0 8px;
+  color: #666;
+}
+
+
+@media (max-width: 992px){
+
+}

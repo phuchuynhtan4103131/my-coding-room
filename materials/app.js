@@ -81,7 +81,7 @@ app.get('/book/:title', async (req,res)=>{
         const related = await Book.find({
             category:book.category,
             __id: {$ne: book._id},     
-        }).limit(4)
+        }).limit(4);
         res.render('book', {book, related, backUrl:req.get('referer') || '/'})
 })
 
