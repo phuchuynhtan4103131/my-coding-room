@@ -1,32 +1,31 @@
 /**
  * Define bookSchema and bookModel
  */
-import mongoose from './mongoose.js';
-
+const mongoose = require('./mongoose');
 
 //  Define the Book schema
 const bookSchema = new mongoose.Schema({
-    category:String,
+    
     title:String,
     author:String,
     year:Number,
     image:String,
-    description:String,
+    category: String,
+    description:String
 
 });
 
 const readingListSchema = new mongoose.Schema({
     
-    // Implement readingListSchema
     name:String,
-    books:[{type: mongoose.Schema.Types.ObjectId, ref: 'Book'}],
+    books:[bookSchema]
     
 });
 
 // Create the Book model
- const Book = mongoose.model('Book', bookSchema);
+const Book = mongoose.model('Book', bookSchema);
 
 // Create readingList model
- const ReadingList = mongoose.model('ReadingList', readingListSchema);
+const ReadingList = mongoose.model('ReadingList', readingListSchema);
 
-export { Book, ReadingList };
+module.exports = { ReadingList, Book };

@@ -10,74 +10,68 @@
     <title>Phuc Huynh Tan's Weekly Readings</title>
     
     <!-- Include your favicon here -->
-    <link rel="stylesheet" href="/style/book.css">
+
     <!-- Including Bootstrap CSS -->
+     <link rel="stylesheet" href="/style/book.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
       
 </head>
 <!-- Header-->
-<header class="header" id="header-container">
-    <nav class="breadcrumbs">
-            <img src="/images/cat-pondering-cat.png" alt="logo" width="64" height="64">
-             <a class="breadcrumbs-item" href="/">Home Page</a>
-
-             <% if(book || book.title){ %>
-                <a href="/book/<%=encodeURIComponent(book.title) %>?title=<%=encodeURIComponent(book)%>" class="breadcrumbs-item"><%=book.title%></a>
-             <%}else{%>
-                <span class="breadcrumbs-item" aira-current="page">Active</span>
-             <%}%>
-    </nav>
-    
+<header classs="p-3">
+    <img src="/images/download (2).png" alt="logo" width="64" height="64">
+        <a href="/">Home Page</a>
 </header>
-
 
 <!-- Main content-->
 <main>
+    <div class="book-container">
     <div class="book-details">
-            <div class="card" style="background-image: url('<%= book.image%>');">
-                <div class="overlay">
-                     <% if(book){%>
-                    <!-- <img src="<%=book.imageUrl || book.image%>" alt="<%book.title%>"> -->
-                    <h3><%= book.title%></h3>
-                    <span><%=book.author%></span>
-                    <p><%= book.description%></p>
-                    <span><%=book.category%> | <%=book.year%></span>
-                <% }else{%>
-                    <p>No book is loaded !</p>
-                <%}%>
+        <!-- Book details-->
+         <% if(book){%>
+            <div class="book-card"> 
+                <img src="<%= book.image || book.imageUrl %>" alt="<%=book.title%>">
+                <div class="book-desc">
+                    <h3><%=book.title%></h3>
+                    <p><%=book.author%></p>
+                    <p><%=book.description%></p>
+                    <span><%= book.category | book.year%></span>
                 </div>
+
             </div>
-            
+            <%}else{%>   
+                <p>No book loaded</p>             
+            <%}%>
     </div>
 
     <!-- Related books in the same category -->
-    <section class="related-section">
+    <section>
         <p>Related Books</p>
-        <% if(related && related.length){%>
-            <%related.forEach((item)=>{ %>
-                <div class="card" style="background-image: url('<%=item.image%>');">
-                     <a href="/book/<%=encodeURIComponent(item.title)%>">
-                        <div><%=item.title%></div>
-                    </a>
+        <div class="related-container">
+            <% related.forEach(book =>{%>
+                <div class="related-card">
+                    <img src="<%=book.image || book.imageUrl%>" alt="<%=book.title%>">
+                    <h3><%=book.title%></h3>
+                    <p><%=book.author%></p>
+                    <p><%=book.description%></p>
+                    <span><%= book.category | book.year%></span>
                 </div>
-               
             <%})%>
-            
-        <%}else{%>
-            <p>No related books found.</p>
-        <%}%>
+        </div>
         
-    </section>
+       
+        </section>
 
-    <!-- Back button here -->
-    
-       <a href="<%= backUrl %>" id="back-btn">Back</a>
-
+        <!-- Back button here -->
+        <div class="back-btn">
+             <a href="/" id="back-btn">Back</a>
+        </div>
+       
+    </div>
   </main>
     
  <!-- Footer -->
         <footer class="footer-container">
-            Made with 🧌 by  <p style="font-weight: bold;"> Phuc Huynh Tan</p>
+            Made with 💔 by <b>Phuc Huynh Tan</b>
         </footer>
     </div>
 

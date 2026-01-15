@@ -1,8 +1,8 @@
 /**
  * Seed the database with books and reading lists
  */
-import { Book, ReadingList } from './bookModel.js';
-import mongoose from './mongoose.js';
+const { Book, ReadingList } = require('./bookModel');
+const mongoose = require('mongoose');
 
 /* Data for Books */
 const books = [
