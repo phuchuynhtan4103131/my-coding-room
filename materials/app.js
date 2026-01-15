@@ -13,6 +13,9 @@ const express = require('express');
 require('dotenv').config();
 const path = require('path');
 const { Book, ReadingList } = require('./db/bookModel');
+const { setTraceSigInt } = require('util');
+const { builtinModules } = require('module');
+const { title } = require('process');
 
 
 
@@ -23,21 +26,70 @@ const app = express();
 app.set('view engine', 'ejs');
 app.use(express.static(path.join(__dirname, 'public')))
 app.use(express.static(path.join(__dirname, 'views')));
+app.use(express.urlencoded({extended:true}))
 /** Routes */
 // Homepage endpoint that when accessed will produce a random reading list for a week
 app.get('/', async (req, res) => {
-    const lists = await ReadingList.find({});
+    const lists = await ReadingList.find({})
     const random = lists[Math.floor(Math.random() * lists.length)];
     console.log({random})
-    res.render('list', {random});
+    res.render('list', {random, lists, pageTitle: ""});
 })
 app.post('/', async (req, res) => {
-    const lists = await ReadingList.find({});
+    const lists = await ReadingList.find({})
     const random = lists[Math.floor(Math.random() * lists.length)];
     console.log({random})
-    res.render('list', {random});
+    res.render('list', {random, lists, pageTitle: "" });
 })
+//sorting function
 
+
+//search engine
+app.get('/search', async (req,res)=>{
+    try{
+        let builtQuery ={};
+        const {search, category} = req.query;
+
+        if(category){
+            builtQuery.category = category;
+        }
+        if(search){
+            builtQuery.$or = [
+                {author: {$regex:search, $options: 'i'}},
+                {title: {$regex:search, $options: 'i'}}
+            ]
+        }
+        const books = await Book.find(builtQuery);
+        console.log(books);
+        res.render('search', {books,search, category, pageTitle: ""})
+    }catch(err){
+        console.error(err);
+    }
+    
+})
+app.post('/search', async (req,res)=>{
+    try{
+        let builtQuery ={};
+        const {search, category} = req.query;
+
+        if(category){
+            builtQuery.category = category;
+        }
+        if(search){
+            builtQuery.$or = [
+                {author: {$regex:search, $options: 'i'}},
+                {title: {$regex:search, $options: 'i'}}
+            ]
+        }
+        const books = await Book.find(builtQuery);
+        console.log(books);
+        res.render('search', {books,search, category, pageTitle: ""})
+    }catch(err){
+        console.error(err);
+    }
+    
+})
+//get breadcrumbs
 // Book endpoint that when accessed will show detail information about a book and related books found in the database
 app.get('/book/:title', async (req, res) => {
 
@@ -49,7 +101,7 @@ app.get('/book/:title', async (req, res) => {
         category: book.category,
         __id:{$ne: book._id},
     }).limit(5);
-    res.render('book', {book, related, backUrl:req.get('referer' || '/')});
+    res.render('book', {book, related, pageTitle: book.title, backUrl:req.get('referer' || '/')});
  
     
 });

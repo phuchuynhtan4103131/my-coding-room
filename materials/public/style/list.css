@@ -42,6 +42,9 @@
     align-items: center;
     padding-top:10px;
 }
+#profile img{
+    position: relative;
+}
 .personal-name h2{
     font-size: 15px;
 }
@@ -54,4 +57,33 @@
     flex-direction: column;
     gap:20px;
     padding:10px;
+}
+#sort-btn{
+    padding:10px;
+}
+
+
+
+@media (max-width:992px){
+    .page-container{
+        display:flex;
+        flex-direction:column;
+
+
+    }
+    #reading-list{
+        display: flex;
+        flex-direction: column;
+    }
+    #profile{
+        display: flex;
+        flex-direction: column  ;
+        max-width: 100%;
+        width: 100%;
+        padding:16px 24px;
+    }
+    #profile img{
+        width:100%;
+        
+    }
 }

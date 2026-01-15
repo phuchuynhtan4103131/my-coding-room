@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Search Result</title>
+    <link rel="stylesheet" href="/style/search.css">
+     <link rel="stylesheet" href="/style/header.css">
+     <link rel="stylesheet" href="/style/footer.css">
+    
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+</head>
+<body>
+    <%- include('partials/header') %>
+    <header classs="p-3">
+        
+    </header>
+    <h1>Search Result</h1>
+    <form action="/search" method="GET" id="search-form">
+        <input type="text" name="search" placeholder="Type to find......." value="<%=search || '' %>">
+                <div class="category-container">
+                    <select name="category" id="category">
+                        <option value="" <%= !category ? 'selected' : '' %>>All </option>
+                        <option value="TEXTBOOK" <%=category === "TEXTBOOK" ? 'selected' : '' %>>TEXTBOOK</option>
+                        <option value="NOVEL" <%=category === "NOVEL" ? 'selected' : '' %>>NOVEL </option>
+                        <option value="PHILOSOPHY" <%=category === "PHILOSOPHY" ? 'selected' : '' %>>PHILOSOPHY</option>
+                    </select>
+                </div>
+                
+                
+                    <button type="submit">Search</button>
+            </form>
+            <div class="book-wrap">
+                <div class="row">
+
+                <div class="column">
+                    <% if(books){%>
+                        <% books.forEach(book =>{%>
+                            <div class="book-container">
+                                <a href="/book/<%= book.title%>">
+                                    <img src="<%=book.image || book.imageUrl%>" alt="book.title">
+                                    <h3><%=book.title%></h3>
+                                    <p><%= book.author %> | <%= book.category %></p>
+                                </a>
+                            </div>
+                        <%})%>
+                    <%}%>
+                </div>
+            </div>
+
+            </div>
+        <%- include('partials/footer') %>
+</body>
+</html>

@@ -10,19 +10,23 @@
     <title>Phuc Huynh Tan's Weekly Readings</title>
     
     <!-- Include your favicon here -->
-
+    <link rel="stylesheet" href="/style/book.css">
+     <link rel="stylesheet" href="/style/header.css">
+     <link rel="stylesheet" href="/style/footer.css">
     <!-- Including Bootstrap CSS -->
      <link rel="stylesheet" href="/style/list.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
       
 </head>
+
 <body>
+    <%- include('partials/header') %> 
+
     <div class="container mx-auto min-vh-100 d-flex flex-column">
 
 <!-- Header, the first section of the page-->
-<header classs="p-3">
-    <img src="/images/download (2).png" alt="logo" width="64" height="64">
-        <a href="/">Home Page</a>
+<header classs="header-container p-3">
+    
 </header>
 
 <!-- Main content -->
@@ -54,12 +58,17 @@
             <form action="/" method="POST">
                 <button id="refresh-btn" type="refresh">Refresh</button>
             </form>
+            <form action="/search" method="GET">
+                <button type="submit" id="button-search">Click to search !</button>
+            </form>
+            
+
             <div class="reading-plan">
-                <% random.books.forEach(book => {%>
+                <% random.books.forEach(book => { %>
                     <% if(book.category === "TEXTBOOK"){%>
                         <div class="reading-card-content">
                             <a href="/book/<%=encodeURIComponent(book.title)%>">
-                                <img src="<%= book.imagUrl || book.image%>" alt="<%=book.title%>">
+                                <img src="<%= book.imageUrl || book.image%>" alt="<%=book.title%>">
                                 <section class="book-info">
                                     <h3><%= book.title %></h3>
                                     <span><%= book.author%></span>
@@ -100,9 +109,7 @@
 </main>
     
  <!-- Footer -->
-        <footer class="footer-container">
-            Made with 💔 by <b>Phuc Huynh Tan</b>
-        </footer>
+        <%- include('partials/footer') %>
     </div>
 
 
